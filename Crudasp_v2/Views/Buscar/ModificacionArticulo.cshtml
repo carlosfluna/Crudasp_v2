@@ -1,0 +1,39 @@
+﻿@model Crudasp_v2.Models.Articulo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width" />
+    <title>ModificacionArticulo</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("ModificacionArticulo", "Buscar", FormMethod.Post))
+        {
+            <p>
+                Codigo del Articulo:
+                @Html.Display("Codigo")
+                @Html.Hidden("Codigo")
+            </p>
+            <p>
+                Descripcion:
+                @Html.TextBox("Descripcion")
+           </p>
+           <p>
+               Precio:
+               @Html.TextBox("Precio")
+           </p>
+           <p>
+               <input type="submit" value="Guardar" />
+           </p>
+            }
+        <br />
+        @Html.ActionLink("Principal", "Index", "Home")
+</div>
+</body>
+</html>
